@@ -4,8 +4,7 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "About", href: "#about" },
-  { label: "Expertise", href: "#expertise" },
-  { label: "Clients", href: "#clients" },
+  { label: "Philosophy", href: "#philosophy" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -34,16 +33,16 @@ const Navbar = () => {
           transition={{ duration: 0.3 }}
           className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl"
           style={{
-            background: "hsl(0 0% 4% / 0.85)",
-            borderBottom: "1px solid hsl(0 0% 100% / 0.06)",
+            background: "hsl(0 0% 3% / 0.85)",
+            borderBottom: "1px solid hsl(0 0% 100% / 0.04)",
           }}
         >
           <div className="max-w-5xl mx-auto px-6 flex items-center justify-between h-14">
             <button
               onClick={() => handleClick("#hero")}
-              className="font-heading text-lg tracking-[0.2em] text-foreground uppercase"
+              className="font-heading text-sm font-medium tracking-[0.3em] text-foreground uppercase"
             >
-              DS
+              DWS
             </button>
 
             <div className="hidden md:flex items-center gap-10">
@@ -51,7 +50,7 @@ const Navbar = () => {
                 <button
                   key={link.href}
                   onClick={() => handleClick(link.href)}
-                  className="text-xs font-body tracking-[0.15em] uppercase text-muted-foreground hover:text-primary transition-colors duration-300"
+                  className="text-[11px] font-body font-light tracking-[0.2em] uppercase text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
                   {link.label}
                 </button>
@@ -63,7 +62,7 @@ const Navbar = () => {
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >
-              {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+              {mobileOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
           </div>
 
@@ -74,14 +73,14 @@ const Navbar = () => {
                 animate={{ height: "auto", opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
                 className="md:hidden overflow-hidden"
-                style={{ background: "hsl(0 0% 4% / 0.95)" }}
+                style={{ background: "hsl(0 0% 3% / 0.95)" }}
               >
                 <div className="flex flex-col items-center py-6 gap-5">
                   {navLinks.map((link) => (
                     <button
                       key={link.href}
                       onClick={() => handleClick(link.href)}
-                      className="text-xs font-body tracking-[0.15em] uppercase text-muted-foreground hover:text-primary transition-colors"
+                      className="text-[11px] font-body font-light tracking-[0.2em] uppercase text-muted-foreground hover:text-primary transition-colors"
                     >
                       {link.label}
                     </button>
