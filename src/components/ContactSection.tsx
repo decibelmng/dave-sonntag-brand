@@ -2,153 +2,127 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Linkedin, Mail, Globe } from "lucide-react";
 
-const subjectOptions = [
-  "Business Inquiry",
-  "Government RFP",
-  "Speaking",
-  "General",
-  "Other",
-];
+const subjectOptions = ["Business Inquiry", "Government RFP", "Speaking", "General", "Other"];
 
 const ContactSection = () => {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    subject: "General",
-    message: "",
-  });
+  const [form, setForm] = useState({ name: "", email: "", subject: "General", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder — form submission logic to be added
     setSubmitted(true);
   };
 
+  const inputClasses =
+    "w-full px-4 py-3 bg-transparent font-body text-sm text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all duration-300";
+
   return (
-    <section id="contact" className="py-24 md:py-32 px-6">
-      <div className="max-w-2xl mx-auto">
+    <section id="contact" className="py-28 md:py-36 px-6 relative">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-b from-transparent via-primary/20 to-transparent" />
+
+      <div className="max-w-xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-heading text-3xl md:text-4xl text-foreground mb-3 text-center">
-            Let's Connect
-          </h2>
-          <div className="w-10 h-[2px] bg-accent mx-auto mb-8" />
-          <p className="font-body text-center text-muted-foreground mb-10 max-w-lg mx-auto">
-            Whether you're exploring a partnership, have an upcoming event, or just want to say hello — I'd love to hear from you.
-          </p>
-
-          {/* Contact links */}
-          <div className="flex items-center justify-center gap-8 mb-12">
-            <a
-              href="mailto:dave@decibelevents.com"
-              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors font-body"
-            >
-              <Mail size={16} strokeWidth={1.5} />
-              Email
-            </a>
-            <a
-              href="https://www.linkedin.com/in/davesonntag/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors font-body"
-            >
-              <Linkedin size={16} strokeWidth={1.5} />
-              LinkedIn
-            </a>
-            <a
-              href="https://www.decibelevents.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors font-body"
-            >
-              <Globe size={16} strokeWidth={1.5} />
-              Decibel Events
-            </a>
+          <div className="text-center mb-14">
+            <p className="text-xs font-body tracking-[0.25em] uppercase text-primary mb-4">Contact</p>
+            <div className="w-8 h-px bg-primary/40 mx-auto mb-8" />
+            <p className="font-body text-sm text-muted-foreground max-w-md mx-auto">
+              Whether you're exploring a partnership, have an upcoming event, or just want to say hello — I'd love to hear from you.
+            </p>
           </div>
 
-          {/* Contact form */}
+          {/* Contact links */}
+          <div className="flex items-center justify-center gap-8 mb-14">
+            {[
+              { icon: Mail, href: "mailto:dave@decibelevents.com", label: "Email" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/davesonntag/", label: "LinkedIn" },
+              { icon: Globe, href: "https://www.decibelevents.com", label: "Decibel" },
+            ].map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith("http") ? "_blank" : undefined}
+                rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-muted-foreground/60 hover:text-primary transition-colors duration-300 font-body"
+              >
+                <link.icon size={14} strokeWidth={1.2} />
+                {link.label}
+              </a>
+            ))}
+          </div>
+
+          {/* Form */}
           {submitted ? (
-            <div className="text-center py-12">
-              <p className="font-heading text-xl text-foreground mb-2">Thank you!</p>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-center py-16"
+            >
+              <p className="font-heading text-xl text-foreground mb-2">Thank you.</p>
               <p className="font-body text-sm text-muted-foreground">
                 Your message has been received. I'll be in touch soon.
               </p>
-            </div>
+            </motion.div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div className="grid md:grid-cols-2 gap-5">
-                <div>
-                  <label htmlFor="name" className="block text-xs font-body text-muted-foreground mb-1.5 uppercase tracking-wider">
-                    Name
-                  </label>
+            <form onSubmit={handleSubmit} className="space-y-0">
+              <div className="grid md:grid-cols-2">
+                <div style={{ borderBottom: "1px solid hsl(0 0% 100% / 0.06)", borderRight: "1px solid hsl(0 0% 100% / 0.06)" }}>
                   <input
-                    id="name"
                     type="text"
                     required
                     maxLength={100}
+                    placeholder="Name"
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="w-full px-4 py-2.5 bg-background border border-border rounded-md font-body text-sm text-foreground focus:outline-none focus:ring-1 focus:ring-primary transition-shadow"
+                    className={inputClasses}
                   />
                 </div>
-                <div>
-                  <label htmlFor="email" className="block text-xs font-body text-muted-foreground mb-1.5 uppercase tracking-wider">
-                    Email
-                  </label>
+                <div style={{ borderBottom: "1px solid hsl(0 0% 100% / 0.06)" }}>
                   <input
-                    id="email"
                     type="email"
                     required
                     maxLength={255}
+                    placeholder="Email"
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className="w-full px-4 py-2.5 bg-background border border-border rounded-md font-body text-sm text-foreground focus:outline-none focus:ring-1 focus:ring-primary transition-shadow"
+                    className={inputClasses}
                   />
                 </div>
               </div>
 
-              <div>
-                <label htmlFor="subject" className="block text-xs font-body text-muted-foreground mb-1.5 uppercase tracking-wider">
-                  Subject
-                </label>
+              <div style={{ borderBottom: "1px solid hsl(0 0% 100% / 0.06)" }}>
                 <select
-                  id="subject"
                   value={form.subject}
                   onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                  className="w-full px-4 py-2.5 bg-background border border-border rounded-md font-body text-sm text-foreground focus:outline-none focus:ring-1 focus:ring-primary transition-shadow"
+                  className={`${inputClasses} bg-background`}
                 >
                   {subjectOptions.map((opt) => (
-                    <option key={opt} value={opt}>
-                      {opt}
-                    </option>
+                    <option key={opt} value={opt}>{opt}</option>
                   ))}
                 </select>
               </div>
 
-              <div>
-                <label htmlFor="message" className="block text-xs font-body text-muted-foreground mb-1.5 uppercase tracking-wider">
-                  Message
-                </label>
+              <div style={{ borderBottom: "1px solid hsl(0 0% 100% / 0.06)" }}>
                 <textarea
-                  id="message"
                   required
                   maxLength={1000}
-                  rows={5}
+                  rows={4}
+                  placeholder="Message"
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  className="w-full px-4 py-2.5 bg-background border border-border rounded-md font-body text-sm text-foreground focus:outline-none focus:ring-1 focus:ring-primary transition-shadow resize-none"
+                  className={`${inputClasses} resize-none`}
                 />
               </div>
 
-              <div className="text-center pt-2">
+              <div className="pt-8 text-center">
                 <button
                   type="submit"
-                  className="px-8 py-2.5 bg-primary text-primary-foreground font-body text-sm tracking-wide rounded-md hover:opacity-90 transition-opacity border border-accent/30"
+                  className="px-10 py-3 bg-transparent font-body text-xs tracking-[0.2em] uppercase text-primary hover:bg-primary hover:text-background transition-all duration-500 rounded-none"
+                  style={{ border: "1px solid hsl(44 52% 55% / 0.4)" }}
                 >
                   Send Message
                 </button>

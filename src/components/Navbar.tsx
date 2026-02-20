@@ -21,8 +21,7 @@ const Navbar = () => {
 
   const handleClick = (href: string) => {
     setMobileOpen(false);
-    const el = document.querySelector(href);
-    el?.scrollIntoView({ behavior: "smooth" });
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -33,30 +32,32 @@ const Navbar = () => {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -80, opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border"
+          className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl"
+          style={{
+            background: "hsl(0 0% 4% / 0.85)",
+            borderBottom: "1px solid hsl(0 0% 100% / 0.06)",
+          }}
         >
           <div className="max-w-5xl mx-auto px-6 flex items-center justify-between h-14">
             <button
               onClick={() => handleClick("#hero")}
-              className="font-heading text-lg tracking-wide text-foreground"
+              className="font-heading text-lg tracking-[0.2em] text-foreground uppercase"
             >
-              Dave Sonntag
+              DS
             </button>
 
-            {/* Desktop links */}
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-10">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => handleClick(link.href)}
-                  className="text-sm font-body tracking-wide text-muted-foreground hover:text-primary transition-colors"
+                  className="text-xs font-body tracking-[0.15em] uppercase text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
                   {link.label}
                 </button>
               ))}
             </div>
 
-            {/* Mobile toggle */}
             <button
               className="md:hidden text-foreground"
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -66,21 +67,21 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Mobile menu */}
           <AnimatePresence>
             {mobileOpen && (
               <motion.div
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: "auto", opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
-                className="md:hidden overflow-hidden bg-background border-t border-border"
+                className="md:hidden overflow-hidden"
+                style={{ background: "hsl(0 0% 4% / 0.95)" }}
               >
-                <div className="flex flex-col items-center py-4 gap-4">
+                <div className="flex flex-col items-center py-6 gap-5">
                   {navLinks.map((link) => (
                     <button
                       key={link.href}
                       onClick={() => handleClick(link.href)}
-                      className="text-sm font-body tracking-wide text-muted-foreground hover:text-primary transition-colors"
+                      className="text-xs font-body tracking-[0.15em] uppercase text-muted-foreground hover:text-primary transition-colors"
                     >
                       {link.label}
                     </button>
