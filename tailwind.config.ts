@@ -13,7 +13,7 @@ export default {
       },
     },
     fontFamily: {
-      heading: ['Playfair Display', 'Georgia', 'serif'],
+      heading: ['Outfit', 'system-ui', 'sans-serif'],
       body: ['Inter', 'system-ui', 'sans-serif'],
     },
     extend: {
