@@ -58,11 +58,7 @@ const StatsBar = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 text-center">
           {stats.map((stat) => (
             <div key={stat.label}>
-              {stat.custom ? (
-                <span className="text-4xl font-bold text-primary">{stat.custom}</span>
-              ) : (
-                <CountUp end={stat.end} suffix={stat.suffix} />
-              )}
+              <CountUp end={stat.end} prefix={stat.prefix} suffix={stat.suffix} />
               <p className="text-sm font-medium uppercase tracking-wider text-foreground mt-2">
                 {stat.label}
               </p>
