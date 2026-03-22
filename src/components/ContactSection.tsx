@@ -2,13 +2,18 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, Linkedin, Globe } from "lucide-react";
 
-const HUBSPOT_PORTAL_ID = "YOUR_PORTAL_ID";
-const HUBSPOT_FORM_GUID = "YOUR_FORM_GUID";
+const HUBSPOT_PORTAL_ID = "24432826";
+const HUBSPOT_FORM_GUID = "520b5960-f871-465b-8272-95fc6b8a75c8";
 
 const contactLinks = [
   { icon: Mail, label: "david@decibelevents.com", href: "mailto:david@decibelevents.com" },
   { icon: Phone, label: "703.953.4493", href: "tel:+17039534493" },
-  { icon: Linkedin, label: "linkedin.com/in/davesonntag", href: "https://www.linkedin.com/in/davesonntag/", external: true },
+  {
+    icon: Linkedin,
+    label: "linkedin.com/in/davesonntag",
+    href: "https://www.linkedin.com/in/davesonntag/",
+    external: true,
+  },
   { icon: Globe, label: "Visit Decibel Events", href: "https://decibelevents.com", external: true },
 ];
 
@@ -49,7 +54,7 @@ const ContactSection = () => {
               pageName: "David Sonntag Contact",
             },
           }),
-        }
+        },
       );
 
       if (res.ok) {
@@ -68,7 +73,8 @@ const ContactSection = () => {
     setError(false);
   };
 
-  const inputStyle = "w-full px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none transition-colors duration-200";
+  const inputStyle =
+    "w-full px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none transition-colors duration-200";
 
   return (
     <section id="contact" className="py-24 md:py-36 px-6 bg-background">
@@ -93,7 +99,11 @@ const ContactSection = () => {
                     rel={link.external ? "noopener noreferrer" : undefined}
                     className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors duration-300 group"
                   >
-                    <link.icon size={18} strokeWidth={1.5} className="text-muted-foreground group-hover:text-foreground transition-colors" />
+                    <link.icon
+                      size={18}
+                      strokeWidth={1.5}
+                      className="text-muted-foreground group-hover:text-foreground transition-colors"
+                    />
                     <span className="text-sm">{link.label}</span>
                   </a>
                 ))}
@@ -109,8 +119,12 @@ const ContactSection = () => {
                 </motion.div>
               ) : error ? (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-16">
-                  <p className="text-destructive mb-4">Something went wrong. Please email{" "}
-                    <a href="mailto:david@decibelevents.com" className="underline">david@decibelevents.com</a> directly.
+                  <p className="text-destructive mb-4">
+                    Something went wrong. Please email{" "}
+                    <a href="mailto:david@decibelevents.com" className="underline">
+                      david@decibelevents.com
+                    </a>{" "}
+                    directly.
                   </p>
                   <button
                     onClick={handleRetry}
@@ -122,42 +136,66 @@ const ContactSection = () => {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <input
-                    type="text" required maxLength={100} placeholder="Name"
-                    value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className={inputStyle} disabled={loading}
-                    style={{ backgroundColor: "hsl(0 0% 15%)", border: "1px solid hsl(0 0% 20%)" }}
-                    onFocus={(e) => e.target.style.borderColor = "hsl(358 87% 52%)"}
-                    onBlur={(e) => e.target.style.borderColor = "hsl(0 0% 20%)"}
-                  />
-                  <input
-                    type="email" required maxLength={255} placeholder="Email"
-                    value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className={inputStyle} disabled={loading}
-                    style={{ backgroundColor: "hsl(0 0% 15%)", border: "1px solid hsl(0 0% 20%)" }}
-                    onFocus={(e) => e.target.style.borderColor = "hsl(358 87% 52%)"}
-                    onBlur={(e) => e.target.style.borderColor = "hsl(0 0% 20%)"}
-                  />
-                  <select
-                    value={form.subject} required onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                    className={`${inputStyle} ${!form.subject ? 'text-muted-foreground/50' : ''}`}
+                    type="text"
+                    required
+                    maxLength={100}
+                    placeholder="Name"
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    className={inputStyle}
                     disabled={loading}
                     style={{ backgroundColor: "hsl(0 0% 15%)", border: "1px solid hsl(0 0% 20%)" }}
-                    onFocus={(e) => e.target.style.borderColor = "hsl(358 87% 52%)"}
-                    onBlur={(e) => e.target.style.borderColor = "hsl(0 0% 20%)"}
+                    onFocus={(e) => (e.target.style.borderColor = "hsl(358 87% 52%)")}
+                    onBlur={(e) => (e.target.style.borderColor = "hsl(0 0% 20%)")}
+                  />
+                  <input
+                    type="email"
+                    required
+                    maxLength={255}
+                    placeholder="Email"
+                    value={form.email}
+                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    className={inputStyle}
+                    disabled={loading}
+                    style={{ backgroundColor: "hsl(0 0% 15%)", border: "1px solid hsl(0 0% 20%)" }}
+                    onFocus={(e) => (e.target.style.borderColor = "hsl(358 87% 52%)")}
+                    onBlur={(e) => (e.target.style.borderColor = "hsl(0 0% 20%)")}
+                  />
+                  <select
+                    value={form.subject}
+                    required
+                    onChange={(e) => setForm({ ...form, subject: e.target.value })}
+                    className={`${inputStyle} ${!form.subject ? "text-muted-foreground/50" : ""}`}
+                    disabled={loading}
+                    style={{ backgroundColor: "hsl(0 0% 15%)", border: "1px solid hsl(0 0% 20%)" }}
+                    onFocus={(e) => (e.target.style.borderColor = "hsl(358 87% 52%)")}
+                    onBlur={(e) => (e.target.style.borderColor = "hsl(0 0% 20%)")}
                   >
-                    <option value="" disabled style={{ color: "#666" }}>Select a topic...</option>
-                    {subjectOptions.map((opt) => <option key={opt} value={opt}>{opt}</option>)}
+                    <option value="" disabled style={{ color: "#666" }}>
+                      Select a topic...
+                    </option>
+                    {subjectOptions.map((opt) => (
+                      <option key={opt} value={opt}>
+                        {opt}
+                      </option>
+                    ))}
                   </select>
                   <textarea
-                    required maxLength={1000} rows={4} placeholder="Message"
-                    value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className={`${inputStyle} resize-none`} disabled={loading}
+                    required
+                    maxLength={1000}
+                    rows={4}
+                    placeholder="Message"
+                    value={form.message}
+                    onChange={(e) => setForm({ ...form, message: e.target.value })}
+                    className={`${inputStyle} resize-none`}
+                    disabled={loading}
                     style={{ backgroundColor: "hsl(0 0% 15%)", border: "1px solid hsl(0 0% 20%)" }}
-                    onFocus={(e) => e.target.style.borderColor = "hsl(358 87% 52%)"}
-                    onBlur={(e) => e.target.style.borderColor = "hsl(0 0% 20%)"}
+                    onFocus={(e) => (e.target.style.borderColor = "hsl(358 87% 52%)")}
+                    onBlur={(e) => (e.target.style.borderColor = "hsl(0 0% 20%)")}
                   />
                   <button
-                    type="submit" disabled={loading}
+                    type="submit"
+                    disabled={loading}
                     className="w-full py-3 bg-primary text-primary-foreground font-semibold text-sm tracking-wide uppercase hover:bg-primary/85 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {loading ? "Sending..." : "Send Message"}
