@@ -44,7 +44,8 @@ const ContactSection = () => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             fields: [
-              { name: "firstname", value: form.name },
+              { name: "firstname", value: form.firstName },
+              { name: "lastname", value: form.lastName },
               { name: "email", value: form.email },
               { name: "subject", value: form.subject },
               { name: "message", value: form.message },
