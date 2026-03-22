@@ -42,7 +42,10 @@ const CredentialsSection = () => {
                 style={{ backgroundColor: "hsl(0 0% 15%)" }}
               >
                 <award.icon size={22} className="text-primary mb-4" strokeWidth={1.5} />
-                <h3 className="text-lg font-bold text-foreground mb-1">{award.name}</h3>
+                <h3 className="text-lg font-bold text-foreground mb-1 flex items-center gap-1.5">
+                  {award.name}
+                  {award.href && <ExternalLink size={14} className="text-muted-foreground" strokeWidth={1.5} />}
+                </h3>
                 <p className="text-sm text-muted-foreground">{award.desc}</p>
               </motion.div>
             );
