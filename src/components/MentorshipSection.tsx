@@ -15,6 +15,7 @@ const MentorshipSection = () => {
             src={mentorshipPhoto}
             alt="David Sonntag — Mentorship"
             className="w-[150px] h-[150px] rounded-full object-cover mx-auto mb-8"
+            style={{ objectPosition: "center 20%" }}
           />
 
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">Mentorship</h2>
