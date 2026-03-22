@@ -48,7 +48,7 @@ const stats = [
   { end: 11, label: "Telly Awards" },
   { end: 50, suffix: "+", label: "Presidential Events" },
   { end: 15, label: "Years at LOC Festival" },
-  { end: 0, label: "WBJ Ranked", custom: "Since 2019" },
+  { end: 17, prefix: "#", label: "WBJ Top Event Firms — Ranked Since 2019" },
 ];
 
 const StatsBar = () => {
