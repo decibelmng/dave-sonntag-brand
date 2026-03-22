@@ -27,21 +27,18 @@ const ClientLogos = () => {
           Trusted By
         </motion.h2>
 
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
           {clients.map((name, i) => (
-            <motion.div
+            <motion.span
               key={name}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="w-[120px] h-[60px] rounded flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300"
-              style={{ backgroundColor: "hsl(0 0% 20%)" }}
+              className="text-foreground text-sm uppercase tracking-[3px] font-light opacity-50 hover:opacity-100 transition-opacity duration-300 cursor-default"
             >
-              <span className="text-foreground text-[10px] font-medium text-center leading-tight px-2">
-                {name}
-              </span>
-            </motion.div>
+              {name}
+            </motion.span>
           ))}
         </div>
       </div>
