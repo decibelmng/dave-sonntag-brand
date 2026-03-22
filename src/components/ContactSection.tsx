@@ -2,6 +2,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, Linkedin, Globe } from "lucide-react";
 
+const HUBSPOT_PORTAL_ID = "YOUR_PORTAL_ID";
+const HUBSPOT_FORM_GUID = "YOUR_FORM_GUID";
+
 const contactLinks = [
   { icon: Mail, label: "david@decibelevents.com", href: "mailto:david@decibelevents.com" },
   { icon: Phone, label: "703.953.4493", href: "tel:+17039534493" },
@@ -20,10 +23,49 @@ const subjectOptions = [
 const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError(false);
+
+    try {
+      const res = await fetch(
+        `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_GUID}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            fields: [
+              { name: "firstname", value: form.name },
+              { name: "email", value: form.email },
+              { name: "subject", value: form.subject },
+              { name: "message", value: form.message },
+            ],
+            context: {
+              pageUri: "https://davesonntag.com",
+              pageName: "David Sonntag Contact",
+            },
+          }),
+        }
+      );
+
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        setError(true);
+      }
+    } catch {
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleRetry = () => {
+    setError(false);
   };
 
   const inputStyle = "w-full px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none transition-colors duration-200";
