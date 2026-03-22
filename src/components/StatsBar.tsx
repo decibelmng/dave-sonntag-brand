@@ -65,6 +65,7 @@ const StatsBar = () => {
             </div>
           ))}
         </div>
+        <div className="mx-auto mt-10" style={{ width: '30%', height: '1px', backgroundColor: '#ED1C24', opacity: 0.3 }} />
       </div>
     </section>
   );
