@@ -18,7 +18,7 @@ const subjectOptions = [
 ];
 
 const ContactSection = () => {
-  const [form, setForm] = useState({ name: "", email: "", subject: "General", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -84,12 +84,13 @@ const ContactSection = () => {
                     onBlur={(e) => e.target.style.borderColor = "hsl(0 0% 20%)"}
                   />
                   <select
-                    value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                    className={inputStyle}
+                    value={form.subject} required onChange={(e) => setForm({ ...form, subject: e.target.value })}
+                    className={`${inputStyle} ${!form.subject ? 'text-muted-foreground/50' : ''}`}
                     style={{ backgroundColor: "hsl(0 0% 15%)", border: "1px solid hsl(0 0% 20%)" }}
                     onFocus={(e) => e.target.style.borderColor = "hsl(358 87% 52%)"}
                     onBlur={(e) => e.target.style.borderColor = "hsl(0 0% 20%)"}
                   >
+                    <option value="" disabled style={{ color: "#666" }}>Select a topic...</option>
                     {subjectOptions.map((opt) => <option key={opt} value={opt}>{opt}</option>)}
                   </select>
                   <textarea
