@@ -4,7 +4,9 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "About", href: "#about" },
-  { label: "Philosophy", href: "#philosophy" },
+  { label: "Credentials", href: "#credentials" },
+  { label: "Media & Speaking", href: "#media" },
+  { label: "Mentorship", href: "#mentorship" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -24,74 +26,63 @@ const Navbar = () => {
   };
 
   return (
-    <AnimatePresence>
-      {scrolled && (
-        <motion.nav
-          initial={{ y: -80, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -80, opacity: 0 }}
-          transition={{ duration: 0.3 }}
-          className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl"
-          style={{
-            background: "hsl(0 0% 3% / 0.85)",
-            borderBottom: "1px solid hsl(0 0% 100% / 0.04)",
-          }}
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled ? "bg-background/95 backdrop-blur-md border-b border-border/30" : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-6xl mx-auto px-6 md:px-12 flex items-center justify-between h-16">
+        <button
+          onClick={() => handleClick("#hero")}
+          className="text-sm font-bold tracking-widest text-foreground uppercase"
         >
-          <div className="max-w-5xl mx-auto px-6 flex items-center justify-between h-14">
-            <button
-              onClick={() => handleClick("#hero")}
-              className="font-heading text-sm font-medium tracking-[0.3em] text-foreground uppercase"
-            >
-              DWS
-            </button>
+          David Sonntag
+        </button>
 
-            <div className="hidden md:flex items-center gap-10">
+        <div className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <button
+              key={link.href}
+              onClick={() => handleClick(link.href)}
+              className="text-xs font-medium tracking-wider uppercase text-foreground/70 hover:text-primary transition-colors duration-300"
+            >
+              {link.label}
+            </button>
+          ))}
+        </div>
+
+        <button
+          className="md:hidden text-foreground"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle menu"
+        >
+          {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
+      </div>
+
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="md:hidden overflow-hidden bg-background/95 backdrop-blur-md"
+          >
+            <div className="flex flex-col items-center py-6 gap-5">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => handleClick(link.href)}
-                  className="text-[11px] font-body font-light tracking-[0.2em] uppercase text-muted-foreground hover:text-primary transition-colors duration-300"
+                  className="text-sm font-medium tracking-wider uppercase text-foreground/70 hover:text-primary transition-colors"
                 >
                   {link.label}
                 </button>
               ))}
             </div>
-
-            <button
-              className="md:hidden text-foreground"
-              onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label="Toggle menu"
-            >
-              {mobileOpen ? <X size={18} /> : <Menu size={18} />}
-            </button>
-          </div>
-
-          <AnimatePresence>
-            {mobileOpen && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                className="md:hidden overflow-hidden"
-                style={{ background: "hsl(0 0% 3% / 0.95)" }}
-              >
-                <div className="flex flex-col items-center py-6 gap-5">
-                  {navLinks.map((link) => (
-                    <button
-                      key={link.href}
-                      onClick={() => handleClick(link.href)}
-                      className="text-[11px] font-body font-light tracking-[0.2em] uppercase text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      {link.label}
-                    </button>
-                  ))}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.nav>
-      )}
-    </AnimatePresence>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
   );
 };
 

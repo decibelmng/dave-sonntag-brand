@@ -2,19 +2,19 @@ import { Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="py-20 px-6" style={{ borderTop: "1px solid hsl(0 0% 100% / 0.03)" }}>
+    <footer className="py-12 px-6 border-t border-border/30">
       <div className="max-w-3xl mx-auto text-center">
-        <p className="font-body text-[10px] font-light tracking-[0.2em] uppercase text-muted-foreground/25 mb-2">
-          © 2026 David Sonntag
+        <p className="text-xs text-muted-foreground/50 mb-1">
+          © 2026 David Sonntag. All rights reserved.
         </p>
-        <p className="font-body text-[10px] font-light tracking-[0.2em] uppercase text-muted-foreground/20 mb-6">
+        <p className="text-xs text-muted-foreground/40 mb-4">
           <a
             href="https://www.decibelevents.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-primary/50 transition-colors duration-500"
+            className="hover:text-primary transition-colors"
           >
-            Decibel Events
+            Decibel Events — decibelevents.com
           </a>
         </p>
         <a
@@ -22,9 +22,9 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
-          className="inline-block text-muted-foreground/20 hover:text-primary/50 transition-colors duration-500"
+          className="inline-block text-muted-foreground/40 hover:text-primary transition-colors"
         >
-          <Linkedin size={13} strokeWidth={1} />
+          <Linkedin size={16} strokeWidth={1.5} />
         </a>
       </div>
     </footer>
