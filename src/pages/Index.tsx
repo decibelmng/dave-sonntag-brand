@@ -5,6 +5,7 @@ import StatsBar from "@/components/StatsBar";
 import ParallaxBreak from "@/components/ParallaxBreak";
 import CredentialsSection from "@/components/CredentialsSection";
 import ClientLogos from "@/components/ClientLogos";
+import ParallaxBreak2 from "@/components/ParallaxBreak2";
 import MediaSection from "@/components/MediaSection";
 import MentorshipSection from "@/components/MentorshipSection";
 import ContactSection from "@/components/ContactSection";
@@ -20,6 +21,7 @@ const Index = () => {
       <ParallaxBreak />
       <CredentialsSection />
       <ClientLogos />
+      <ParallaxBreak2 />
       <MediaSection />
       <MentorshipSection />
       <ContactSection />
