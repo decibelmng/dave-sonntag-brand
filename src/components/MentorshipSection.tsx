@@ -13,7 +13,7 @@ const MentorshipSection = () => {
         >
           <img
             src={mentorshipPhoto}
-            alt="David Sonntag — Mentorship"
+            alt="David Sonntag, event production mentor and CEO of Decibel Events"
             className="w-[150px] h-[150px] rounded-full object-cover mx-auto mb-8"
             style={{ objectPosition: "center 20%" }}
           />
