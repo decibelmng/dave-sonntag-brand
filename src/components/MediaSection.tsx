@@ -29,6 +29,7 @@ const MediaSection = () => {
                 src={mediaPortrait}
                 alt="David Sonntag in suit with production headset, available for podcast and speaking appearances"
                 className="w-full md:max-w-[300px] rounded-lg object-cover"
+                loading="lazy"
               />
               <div className="absolute bottom-0 left-0 right-0 md:right-auto md:w-[300px] h-1 bg-primary rounded-b-lg" />
             </div>
