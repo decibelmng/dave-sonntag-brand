@@ -5,7 +5,8 @@ const ParallaxBreak = () => {
     <section
       className="relative h-[400px] bg-fixed bg-cover bg-center"
       style={{ backgroundImage: `url(${parallaxBg})` }}
-      aria-hidden="true"
+      role="img"
+      aria-label="David Sonntag coordinating with production crew backstage at a corporate event"
     >
       <div className="absolute inset-0 bg-black/40" />
     </section>

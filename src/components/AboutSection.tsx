@@ -28,7 +28,7 @@ const AboutSection = () => {
             <div className="relative">
               <img
                 src={headshot}
-                alt="David Sonntag — CEO and Founder of Decibel Events"
+                alt="David Sonntag, CEO of Decibel Events, professional headshot"
                 className="w-full md:max-w-[350px] rounded-lg object-cover"
               />
               {/* Red accent border on bottom */}
