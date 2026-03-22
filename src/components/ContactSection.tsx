@@ -26,7 +26,7 @@ const subjectOptions = [
 ];
 
 const ContactSection = () => {
-  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [form, setForm] = useState({ firstName: "", lastName: "", email: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -44,7 +44,8 @@ const ContactSection = () => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             fields: [
-              { name: "firstname", value: form.name },
+              { name: "firstname", value: form.firstName },
+              { name: "lastname", value: form.lastName },
               { name: "email", value: form.email },
               { name: "subject", value: form.subject },
               { name: "message", value: form.message },
@@ -135,19 +136,34 @@ const ContactSection = () => {
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
-                  <input
-                    type="text"
-                    required
-                    maxLength={100}
-                    placeholder="Name"
-                    value={form.name}
-                    onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className={inputStyle}
-                    disabled={loading}
-                    style={{ backgroundColor: "hsl(0 0% 15%)", border: "1px solid hsl(0 0% 20%)" }}
-                    onFocus={(e) => (e.target.style.borderColor = "hsl(358 87% 52%)")}
-                    onBlur={(e) => (e.target.style.borderColor = "hsl(0 0% 20%)")}
-                  />
+                  <div className="flex flex-col md:flex-row gap-4">
+                    <input
+                      type="text"
+                      required
+                      maxLength={100}
+                      placeholder="First Name"
+                      value={form.firstName}
+                      onChange={(e) => setForm({ ...form, firstName: e.target.value })}
+                      className={`flex-1 ${inputStyle}`}
+                      disabled={loading}
+                      style={{ backgroundColor: "hsl(0 0% 15%)", border: "1px solid hsl(0 0% 20%)" }}
+                      onFocus={(e) => (e.target.style.borderColor = "hsl(358 87% 52%)")}
+                      onBlur={(e) => (e.target.style.borderColor = "hsl(0 0% 20%)")}
+                    />
+                    <input
+                      type="text"
+                      required
+                      maxLength={100}
+                      placeholder="Last Name"
+                      value={form.lastName}
+                      onChange={(e) => setForm({ ...form, lastName: e.target.value })}
+                      className={`flex-1 ${inputStyle}`}
+                      disabled={loading}
+                      style={{ backgroundColor: "hsl(0 0% 15%)", border: "1px solid hsl(0 0% 20%)" }}
+                      onFocus={(e) => (e.target.style.borderColor = "hsl(358 87% 52%)")}
+                      onBlur={(e) => (e.target.style.borderColor = "hsl(0 0% 20%)")}
+                    />
+                  </div>
                   <input
                     type="email"
                     required
