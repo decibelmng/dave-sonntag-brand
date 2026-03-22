@@ -18,7 +18,7 @@ const subjectOptions = [
 ];
 
 const ContactSection = () => {
-  const [form, setForm] = useState({ name: "", email: "", subject: "General", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
