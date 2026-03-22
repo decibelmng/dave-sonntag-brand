@@ -5,7 +5,7 @@ const awards = [
   { icon: Trophy, name: "7 Silver Anvil Awards", desc: "PRSA's highest honor, including Excellence winners" },
   { icon: Award, name: "11 Telly Awards", desc: "Gold, Silver, and Bronze across multiple categories" },
   { icon: Star, name: "2 PR Week Awards", desc: "National recognition for campaign excellence" },
-  { icon: Award, name: "Peabody Award Connection", desc: "Voices of Civil Rights bus tour production" },
+  { icon: Award, name: "Peabody Award — Voices of Civil Rights", desc: "Produced the 70-day AARP bus tour featured in Peabody Award-winning broadcast coverage" },
   { icon: Building2, name: "WBJ Top Event Firm", desc: "Continuously ranked since 2019, #17 in 2026" },
   { icon: GraduationCap, name: "40 Under 40", desc: "Triangle Business Journal Leadership Award" },
   {
