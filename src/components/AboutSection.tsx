@@ -1,6 +1,17 @@
 import { motion } from "framer-motion";
 import headshot from "@/assets/headshot.jpg";
 
+const DecibelLink = ({ children }: { children: React.ReactNode }) => (
+  <a
+    href="https://decibelevents.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-foreground hover:underline decoration-primary underline-offset-2 transition-colors duration-300"
+  >
+    {children}
+  </a>
+);
+
 const AboutSection = () => {
   return (
     <section id="about" className="py-24 md:py-36 px-6">
