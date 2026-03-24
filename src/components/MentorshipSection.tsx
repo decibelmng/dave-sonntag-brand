@@ -20,7 +20,9 @@ const MentorshipSection = () => {
             loading="lazy"
           />
 
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">Mentorship</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">Mentorship</h2>
+          <SectionHeadingAccent />
+          <div className="mb-8" />
 
           <p className="text-base leading-[1.7] text-muted-foreground mb-10">
             I got my start in events managing a trade show booth for the National Park Foundation. Twenty-three years later, I'm still learning. If you're early in your event production career and looking for guidance — on building a firm, navigating government contracting, or just figuring out the industry — I'm happy to make time for a conversation.

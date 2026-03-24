@@ -29,6 +29,7 @@ const CredentialsSection = () => {
           className="text-center mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">Recognition</h2>
+          <SectionHeadingAccent />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

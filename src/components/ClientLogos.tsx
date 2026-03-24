@@ -23,10 +23,12 @@ const ClientLogos = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-bold text-foreground text-center mb-14"
+          className="text-3xl md:text-4xl font-bold text-foreground text-center mb-4"
         >
           Trusted By
         </motion.h2>
+        <SectionHeadingAccent />
+        <div className="mb-14" />
 
         <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
           {clients.map((name, i) => (
