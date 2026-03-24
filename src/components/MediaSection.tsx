@@ -60,7 +60,7 @@ const MediaSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.06 }}
-                  className="flex items-start gap-3 p-4 rounded-lg"
+                  className="flex items-center gap-3 p-4 rounded-lg h-full"
                   style={{ backgroundColor: "hsl(0 0% 15%)" }}
                 >
                   <Mic size={16} className="text-primary mt-0.5 flex-shrink-0" strokeWidth={1.5} />
