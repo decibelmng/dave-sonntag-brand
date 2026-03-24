@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import SectionHeadingAccent from "./SectionHeadingAccent";
 import headshot from "@/assets/headshot.jpg";
 
 const DecibelLink = ({ children }: { children: React.ReactNode }) => (
