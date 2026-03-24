@@ -8,7 +8,7 @@ const ParallaxBreak = () => {
       role="img"
       aria-label="David Sonntag coordinating with production crew backstage at a corporate event"
     >
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(26,15,15,0.5), rgba(26,15,15,0.4))" }} />
     </section>
   );
 };

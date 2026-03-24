@@ -38,7 +38,10 @@ const CredentialsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.07 }}
-                className="p-6 rounded-lg border border-border/40 hover:border-primary/40 hover:-translate-y-1 hover:shadow-[0_0_20px_hsl(358_87%_52%/0.08)] transition-all duration-300"
+                className="p-6 rounded-lg border border-border/40 hover:border-primary/40 hover:-translate-y-1 transition-all duration-300"
+                style={{ backgroundColor: "hsl(0 0% 15%)" }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = "0 0 30px rgba(237,28,36,0.12), 0 4px 20px rgba(0,0,0,0.3)"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = "none"; }}
                 style={{ backgroundColor: "hsl(0 0% 15%)" }}
               >
                 <award.icon size={22} className="text-primary mb-4" strokeWidth={1.5} />

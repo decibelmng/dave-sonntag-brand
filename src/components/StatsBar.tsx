@@ -53,7 +53,15 @@ const stats = [
 
 const StatsBar = () => {
   return (
-    <section className="py-16 px-6" style={{ backgroundColor: "hsl(0 0% 13%)" }}>
+    <section
+      className="py-16 px-6 relative"
+      style={{
+        background: "linear-gradient(to right, hsl(0 0% 13%), hsl(10 10% 14%))",
+        borderTop: "1px solid transparent",
+        borderBottom: "1px solid transparent",
+        borderImage: "linear-gradient(to right, transparent, rgba(237,28,36,0.3), transparent) 1",
+      }}
+    >
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 text-center">
           {stats.map((stat) => (

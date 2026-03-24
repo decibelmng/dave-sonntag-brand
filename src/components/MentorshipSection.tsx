@@ -15,6 +15,7 @@ const MentorshipSection = () => {
             src={mentorshipPhoto}
             alt="David Sonntag, event production mentor and CEO of Decibel Events"
             className="w-[150px] h-[150px] rounded-full object-cover mx-auto mb-8"
+            style={{ boxShadow: "0 0 0 2px #ED1C24, 0 0 15px rgba(237,28,36,0.15)" }}
             loading="lazy"
             style={{ objectPosition: "center 20%" }}
           />

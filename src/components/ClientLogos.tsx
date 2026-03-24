@@ -15,7 +15,7 @@ const clients = [
 
 const ClientLogos = () => {
   return (
-    <section className="py-20 px-6 bg-background">
+    <section className="py-20 px-6 bg-background relative" style={{ background: "radial-gradient(ellipse at center, rgba(237,28,36,0.04) 0%, transparent 70%), hsl(var(--background))" }}>
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
