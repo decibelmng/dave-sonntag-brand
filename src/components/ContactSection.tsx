@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, Linkedin, Globe } from "lucide-react";
+import SectionHeadingAccent from "./SectionHeadingAccent";
 
 const HUBSPOT_PORTAL_ID = "24432826";
 const HUBSPOT_FORM_GUID = "520b5960-f871-465b-8272-95fc6b8a75c8";
