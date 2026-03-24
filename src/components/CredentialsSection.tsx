@@ -42,7 +42,6 @@ const CredentialsSection = () => {
                 style={{ backgroundColor: "hsl(0 0% 15%)" }}
                 onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = "0 0 30px rgba(237,28,36,0.12), 0 4px 20px rgba(0,0,0,0.3)"; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = "none"; }}
-                style={{ backgroundColor: "hsl(0 0% 15%)" }}
               >
                 <award.icon size={22} className="text-primary mb-4" strokeWidth={1.5} />
                 <h3 className="text-lg font-bold text-foreground mb-1 flex items-center gap-1.5">
