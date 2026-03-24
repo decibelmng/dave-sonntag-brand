@@ -112,6 +112,7 @@ const ContactSection = () => {
                   </a>
                 ))}
               </div>
+              <p className="text-sm text-muted-foreground/50 mt-12 leading-relaxed">Based in Washington, DC<br/>Serving clients nationwide</p>
             </div>
 
             {/* Right — 55% */}
