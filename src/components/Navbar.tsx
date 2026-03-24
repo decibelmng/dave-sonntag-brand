@@ -3,21 +3,42 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Credentials", href: "#credentials" },
-  { label: "Media & Speaking", href: "#media" },
-  { label: "Mentorship", href: "#mentorship" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "#about", sectionId: "about" },
+  { label: "Credentials", href: "#credentials", sectionId: "credentials" },
+  { label: "Media & Speaking", href: "#media", sectionId: "media" },
+  { label: "Mentorship", href: "#mentorship", sectionId: "mentorship" },
+  { label: "Contact", href: "#contact", sectionId: "contact" },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const sectionIds = navLinks.map((l) => l.sectionId);
+    const observers: IntersectionObserver[] = [];
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id);
+        },
+        { rootMargin: "-40% 0px -55% 0px" }
+      );
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
   }, []);
 
   const handleClick = (href: string) => {
@@ -44,7 +65,11 @@ const Navbar = () => {
             <button
               key={link.href}
               onClick={() => handleClick(link.href)}
-              className="text-xs font-medium tracking-wider uppercase text-foreground/70 hover:text-primary transition-colors duration-300"
+              className={`text-xs font-medium tracking-wider uppercase transition-colors duration-300 ${
+                activeSection === link.sectionId
+                  ? "text-primary"
+                  : "text-foreground/70 hover:text-primary"
+              }`}
             >
               {link.label}
             </button>
@@ -73,7 +98,11 @@ const Navbar = () => {
                 <button
                   key={link.href}
                   onClick={() => handleClick(link.href)}
-                  className="text-sm font-medium tracking-wider uppercase text-foreground/70 hover:text-primary transition-colors"
+                  className={`text-sm font-medium tracking-wider uppercase transition-colors ${
+                    activeSection === link.sectionId
+                      ? "text-primary"
+                      : "text-foreground/70 hover:text-primary"
+                  }`}
                 >
                   {link.label}
                 </button>

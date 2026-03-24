@@ -38,7 +38,7 @@ const ClientLogos = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="text-foreground text-sm uppercase tracking-[3px] font-light opacity-50 hover:opacity-100 transition-opacity duration-300 cursor-default"
+              className="text-foreground text-[15px] uppercase tracking-[3px] font-light opacity-60 hover:opacity-100 transition-opacity duration-300 cursor-default"
             >
               {name}
             </motion.span>

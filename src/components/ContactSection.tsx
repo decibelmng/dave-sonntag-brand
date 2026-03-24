@@ -112,6 +112,7 @@ const ContactSection = () => {
                   </a>
                 ))}
               </div>
+              <p className="text-sm text-muted-foreground/50 mt-12 leading-relaxed">Based in Washington, DC<br/>Serving clients nationwide</p>
             </div>
 
             {/* Right — 55% */}
@@ -132,7 +133,7 @@ const ContactSection = () => {
                   </p>
                   <button
                     onClick={handleRetry}
-                    className="px-6 py-2 bg-primary text-primary-foreground font-semibold text-sm tracking-wide uppercase hover:bg-primary/85 transition-colors duration-300"
+                    className="px-6 py-2 rounded-sm bg-primary text-primary-foreground font-semibold text-sm tracking-wide uppercase hover:bg-primary/85 transition-colors duration-300"
                   >
                     Try Again
                   </button>
@@ -215,7 +216,7 @@ const ContactSection = () => {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full py-3 bg-primary text-primary-foreground font-semibold text-sm tracking-wide uppercase hover:bg-primary/85 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full py-3 rounded-sm bg-primary text-primary-foreground font-semibold text-sm tracking-wide uppercase hover:bg-primary/85 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {loading ? "Sending..." : "Send Message"}
                   </button>

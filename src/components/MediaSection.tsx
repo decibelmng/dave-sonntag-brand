@@ -60,7 +60,7 @@ const MediaSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.06 }}
-                  className="flex items-start gap-3 p-4 rounded-lg"
+                  className="flex items-center gap-3 p-4 rounded-lg h-full"
                   style={{ backgroundColor: "hsl(0 0% 15%)" }}
                 >
                   <Mic size={16} className="text-primary mt-0.5 flex-shrink-0" strokeWidth={1.5} />
@@ -72,7 +72,7 @@ const MediaSection = () => {
             <div className="text-center md:text-left">
               <a
                 href="#contact"
-                className="inline-block px-8 py-3 bg-primary text-primary-foreground font-semibold text-sm tracking-wide uppercase hover:bg-primary/85 transition-colors duration-300"
+                className="inline-block px-8 py-3 rounded-sm bg-primary text-primary-foreground font-semibold text-sm tracking-wide uppercase hover:bg-primary/85 transition-colors duration-300"
               >
                 Book David for Your Podcast or Event
               </a>

@@ -3,7 +3,7 @@ import parallaxBg from "@/assets/parallax-backstage.jpg";
 const ParallaxBreak = () => {
   return (
     <section
-      className="relative h-[400px] bg-fixed bg-cover"
+      className="relative h-[450px] bg-fixed bg-cover"
       style={{ backgroundImage: `url(${parallaxBg})`, backgroundPosition: 'center 30%' }}
       role="img"
       aria-label="David Sonntag coordinating with production crew backstage at a corporate event"
