@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Mic } from "lucide-react";
+import SectionHeadingAccent from "./SectionHeadingAccent";
 import mediaPortrait from "@/assets/media-portrait.jpg";
 
 const topics = [
