@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import SectionHeadingAccent from "./SectionHeadingAccent";
 import mentorshipPhoto from "@/assets/mentorship-photo.jpg";
 
 const MentorshipSection = () => {
