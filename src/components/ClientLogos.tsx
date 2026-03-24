@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import SectionHeadingAccent from "./SectionHeadingAccent";
 
 const clients = [
   "Library of Congress",
