@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Trophy, Award, Star, Newspaper, Building2, GraduationCap, BookOpen, ExternalLink } from "lucide-react";
+import SectionHeadingAccent from "./SectionHeadingAccent";
 
 const awards = [
   { icon: Trophy, name: "7 Silver Anvil Awards", desc: "PRSA's highest honor, including Excellence winners" },
@@ -28,6 +29,7 @@ const CredentialsSection = () => {
           className="text-center mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">Recognition</h2>
+          <SectionHeadingAccent />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -38,8 +40,10 @@ const CredentialsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.07 }}
-                className="p-6 rounded-lg border border-border/40 hover:border-primary/40 hover:-translate-y-1 hover:shadow-[0_0_20px_hsl(358_87%_52%/0.08)] transition-all duration-300"
+                className="p-6 rounded-lg border border-border/40 hover:border-primary/40 hover:-translate-y-1 transition-all duration-300"
                 style={{ backgroundColor: "hsl(0 0% 15%)" }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = "0 0 30px rgba(237,28,36,0.12), 0 4px 20px rgba(0,0,0,0.3)"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = "none"; }}
               >
                 <award.icon size={22} className="text-primary mb-4" strokeWidth={1.5} />
                 <h3 className="text-lg font-bold text-foreground mb-1 flex items-center gap-1.5">

@@ -17,6 +17,13 @@ const HeroSection = () => {
       />
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/50" />
+      {/* Warm radial gradient overlay */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "radial-gradient(ellipse at 0% 100%, rgba(237,28,36,0.08) 0%, transparent 40%)",
+        }}
+      />
 
       {/* Content — left aligned */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-12 lg:px-20">

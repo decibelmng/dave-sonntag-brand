@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Mic } from "lucide-react";
+import SectionHeadingAccent from "./SectionHeadingAccent";
 import mediaPortrait from "@/assets/media-portrait.jpg";
 
 const topics = [
@@ -43,7 +44,9 @@ const MediaSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="md:w-[65%]"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Media & Speaking</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">Media & Speaking</h2>
+            <SectionHeadingAccent />
+            <div className="mb-6" />
 
             <p className="text-base leading-[1.7] text-muted-foreground mb-10">
               David is available for podcast appearances, conference panels, keynote presentations, and media interviews on topics at the intersection of event production, government contracting, and experiential marketing.

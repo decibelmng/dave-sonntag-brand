@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, Linkedin, Globe } from "lucide-react";
+import SectionHeadingAccent from "./SectionHeadingAccent";
 
 const HUBSPOT_PORTAL_ID = "24432826";
 const HUBSPOT_FORM_GUID = "520b5960-f871-465b-8272-95fc6b8a75c8";
@@ -89,7 +90,9 @@ const ContactSection = () => {
           <div className="flex flex-col md:flex-row gap-16">
             {/* Left — 45% */}
             <div className="md:w-[45%]">
-              <h2 className="text-3xl font-bold text-foreground mb-10">Get in Touch</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-2">Get in Touch</h2>
+              <div className="flex justify-start"><SectionHeadingAccent /></div>
+              <div className="mb-10" />
 
               <div className="space-y-5">
                 {contactLinks.map((link) => (

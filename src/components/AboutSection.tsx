@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import SectionHeadingAccent from "./SectionHeadingAccent";
 import headshot from "@/assets/headshot.jpg";
 
 const DecibelLink = ({ children }: { children: React.ReactNode }) => (
@@ -44,7 +45,9 @@ const AboutSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="md:w-[60%]"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">About David</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">About David</h2>
+            <SectionHeadingAccent />
+            <div className="mb-8" />
 
             <div className="space-y-6 text-base leading-[1.7] text-muted-foreground">
               <p>
