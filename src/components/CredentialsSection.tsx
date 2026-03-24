@@ -32,15 +32,16 @@ const CredentialsSection = () => {
           <SectionHeadingAccent />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {awards.map((award, i) => {
+            const isLast = i === awards.length - 1;
             const CardContent = (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.07 }}
-                className="p-6 rounded-lg border border-border/40 hover:border-primary/40 hover:-translate-y-1 transition-all duration-300"
+                className="p-6 rounded-lg border border-border/40 hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col min-h-[160px]"
                 style={{ backgroundColor: "hsl(0 0% 15%)" }}
                 onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = "0 0 30px rgba(237,28,36,0.12), 0 4px 20px rgba(0,0,0,0.3)"; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = "none"; }}
@@ -50,16 +51,18 @@ const CredentialsSection = () => {
                   {award.name}
                   {award.href && <ExternalLink size={14} className="text-muted-foreground" strokeWidth={1.5} />}
                 </h3>
-                <p className="text-sm text-muted-foreground">{award.desc}</p>
+                <p className="text-sm text-muted-foreground flex-grow">{award.desc}</p>
               </motion.div>
             );
 
+            const wrapperClass = isLast ? "lg:col-start-2" : "";
+
             return award.href ? (
-              <a key={award.name} href={award.href} target="_blank" rel="noopener noreferrer">
+              <a key={award.name} href={award.href} target="_blank" rel="noopener noreferrer" className={wrapperClass}>
                 {CardContent}
               </a>
             ) : (
-              <div key={award.name}>{CardContent}</div>
+              <div key={award.name} className={wrapperClass}>{CardContent}</div>
             );
           })}
         </div>
