@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Trophy, Award, Star, Newspaper, Building2, GraduationCap, BookOpen, ExternalLink } from "lucide-react";
+import SectionHeadingAccent from "./SectionHeadingAccent";
 
 const awards = [
   { icon: Trophy, name: "7 Silver Anvil Awards", desc: "PRSA's highest honor, including Excellence winners" },
