@@ -133,7 +133,7 @@ const ContactSection = () => {
                   </p>
                   <button
                     onClick={handleRetry}
-                    className="px-6 py-2 bg-primary text-primary-foreground font-semibold text-sm tracking-wide uppercase hover:bg-primary/85 transition-colors duration-300"
+                    className="px-6 py-2 rounded-sm bg-primary text-primary-foreground font-semibold text-sm tracking-wide uppercase hover:bg-primary/85 transition-colors duration-300"
                   >
                     Try Again
                   </button>
