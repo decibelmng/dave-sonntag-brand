@@ -79,13 +79,13 @@ const HeroSection = () => {
               href="https://decibelevents.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-3 bg-primary text-primary-foreground font-semibold text-sm tracking-wide uppercase hover:bg-primary/85 transition-colors duration-300"
+              className="inline-block px-8 py-3 rounded-sm bg-primary text-primary-foreground font-semibold text-sm tracking-wide uppercase hover:bg-primary/85 transition-colors duration-300"
             >
               Work With Decibel Events
             </a>
             <a
               href="#contact"
-              className="inline-block px-8 py-3 border border-foreground text-foreground font-semibold text-sm tracking-wide uppercase hover:bg-foreground hover:text-background transition-colors duration-300"
+              className="inline-block px-8 py-3 rounded-sm border border-foreground text-foreground font-semibold text-sm tracking-wide uppercase hover:bg-foreground hover:text-background transition-colors duration-300"
             >
               Get in Touch
             </a>

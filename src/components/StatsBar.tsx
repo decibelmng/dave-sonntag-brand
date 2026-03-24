@@ -65,7 +65,7 @@ const StatsBar = () => {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 text-center">
           {stats.map((stat) => (
-            <div key={stat.label}>
+            <div key={stat.label} className="min-h-[80px] flex flex-col items-center justify-start">
               <CountUp end={stat.end} prefix={stat.prefix} suffix={stat.suffix} />
               <p className="text-sm font-medium uppercase tracking-wider text-foreground mt-2">
                 {stat.label}

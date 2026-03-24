@@ -30,7 +30,7 @@ const AboutSection = () => {
               <img
                 src={headshot}
                 alt="David Sonntag, CEO of Decibel Events, professional headshot"
-                className="w-full md:max-w-[350px] rounded-lg object-cover"
+                className="w-full md:max-w-[350px] md:max-h-[480px] rounded-lg object-cover object-top"
               />
               {/* Red accent border on bottom */}
               <div className="absolute bottom-0 left-0 right-0 md:right-auto md:w-[350px] h-1 bg-primary rounded-b-lg" />
