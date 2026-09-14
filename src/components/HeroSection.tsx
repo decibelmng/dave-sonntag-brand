@@ -13,7 +13,7 @@ const HeroSection = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroBg})` }}
         role="img"
-        aria-label="David Sonntag producing a live event at a production desk with headset"
+        aria-label="Dave Sonntag producing a live event at a production desk with headset"
       />
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/50" />

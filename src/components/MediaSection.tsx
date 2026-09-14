@@ -28,7 +28,7 @@ const MediaSection = () => {
             <div className="relative">
               <img
                 src={mediaPortrait}
-                alt="David Sonntag in suit with production headset, available for podcast and speaking appearances"
+                alt="Dave Sonntag in suit with production headset, available for podcast and speaking appearances"
                 className="w-full md:max-w-[300px] rounded-lg object-cover"
                 loading="lazy"
               />
@@ -49,7 +49,7 @@ const MediaSection = () => {
             <div className="mb-6" />
 
             <p className="text-base leading-[1.7] text-muted-foreground mb-10">
-              David is available for podcast appearances, conference panels, keynote presentations, and media interviews on topics at the intersection of event production, government contracting, and experiential marketing.
+              Dave is available for podcast appearances, conference panels, keynote presentations, and media interviews on topics at the intersection of event production, government contracting, and experiential marketing.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
@@ -74,7 +74,7 @@ const MediaSection = () => {
                 href="#contact"
                 className="inline-block px-8 py-3 rounded-sm bg-primary text-primary-foreground font-semibold text-sm tracking-wide uppercase hover:bg-primary/85 transition-colors duration-300"
               >
-                Book David for Your Podcast or Event
+                Book Dave for Your Podcast or Event
               </a>
             </div>
           </motion.div>
