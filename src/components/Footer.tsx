@@ -7,7 +7,7 @@ const Footer = () => {
         yeah, we can handle that.®
       </p>
       <p className="text-sm mb-2" style={{ color: "hsl(0 0% 40%)" }}>
-        © 2026 David Sonntag. All rights reserved.
+        © 2026 Dave Sonntag. All rights reserved.
       </p>
       <a
         href="https://decibelevents.com"

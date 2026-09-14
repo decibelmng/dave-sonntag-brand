@@ -53,7 +53,7 @@ const ContactSection = () => {
             ],
             context: {
               pageUri: "https://davesonntag.com",
-              pageName: "David Sonntag Contact",
+              pageName: "Dave Sonntag Contact",
             },
           }),
         },

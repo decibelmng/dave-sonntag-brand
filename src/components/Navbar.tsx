@@ -57,7 +57,7 @@ const Navbar = () => {
           onClick={() => handleClick("#hero")}
           className="text-sm font-bold tracking-widest text-foreground uppercase"
         >
-          David Sonntag
+          Dave Sonntag
         </button>
 
         <div className="hidden md:flex items-center gap-8">
