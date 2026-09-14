@@ -7,7 +7,7 @@ const HUBSPOT_PORTAL_ID = "24432826";
 const HUBSPOT_FORM_GUID = "520b5960-f871-465b-8272-95fc6b8a75c8";
 
 const contactLinks = [
-  { icon: Mail, label: "david@decibelevents.com", href: "mailto:david@decibelevents.com" },
+  { icon: Mail, label: "dave@decibelevents.com", href: "mailto:dave@decibelevents.com" },
   { icon: Phone, label: "703.953.4493", href: "tel:+17039534493" },
   {
     icon: Linkedin,
@@ -126,8 +126,8 @@ const ContactSection = () => {
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-16">
                   <p className="text-destructive mb-4">
                     Something went wrong. Please email{" "}
-                    <a href="mailto:david@decibelevents.com" className="underline">
-                      david@decibelevents.com
+                    <a href="mailto:dave@decibelevents.com" className="underline">
+                      dave@decibelevents.com
                     </a>{" "}
                     directly.
                   </p>
