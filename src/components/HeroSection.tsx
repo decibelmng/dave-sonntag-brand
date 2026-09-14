@@ -39,7 +39,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-6xl font-bold tracking-tight text-foreground mb-4"
           >
-            DAVID SONNTAG
+            DAVE SONNTAG
           </motion.h1>
 
           <motion.p
