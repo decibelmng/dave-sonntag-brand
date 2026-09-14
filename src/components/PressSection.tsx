@@ -13,6 +13,12 @@ type Entry = {
 
 const entries: Entry[] = [
   {
+    outlet: "Washington Business Journal",
+    title: "Largest Meeting and Event Planners",
+    desc: "Ranked every year since 2019 — #17 in 2026.",
+    year: "2019–2026",
+  },
+  {
     outlet: "The Telly Awards",
     title: "Five wins for the 2023 National Book Festival",
     desc: "Library of Congress — 2023 National Book Festival: Elliot Page on His Memoir \"Pageboy\".",
@@ -46,12 +52,6 @@ const entries: Entry[] = [
     desc: "A conversation on building an event production firm for high-stakes clients.",
     year: "2024",
     href: "https://www.blueoceanglobaltech.com/interview/david-sonntag-founder-and-ceo-at-decibel-events/",
-  },
-  {
-    outlet: "Washington Business Journal",
-    title: "Largest Meeting and Event Planners",
-    desc: "Ranked every year since 2019 — #17 in 2026.",
-    year: "2019–2026",
   },
   {
     outlet: "Trade Show News Network",
