@@ -27,9 +27,30 @@ const entries: Entry[] = [
   {
     outlet: "The Telly Awards",
     title: "Five wins for the 2023 National Book Festival",
-    desc: "Recognized for production of the Library of Congress National Book Festival.",
+    desc: "Library of Congress — 2023 National Book Festival: Elliot Page on His Memoir \"Pageboy\".",
     year: "2024",
-    links: [],
+    links: [
+      {
+        label: "Gold — Social Responsibility",
+        href: "https://www.tellyawards.com/winners/2024/non-broadcast/general-social-responsibility/2023-national-book-festival-elliot-page-on-his-memoir-pageboy/317229/",
+      },
+      {
+        label: "Silver — Biography",
+        href: "https://www.tellyawards.com/winners/2024/non-broadcast/general-biography/2023-national-book-festival-elliot-page-on-his-memoir-pageboy/318222",
+      },
+      {
+        label: "Silver — Diversity, Equity & Inclusion",
+        href: "https://www.tellyawards.com/winners/2024/non-broadcast/general-dei-diversity-equity-inclusion/2023-national-book-festival-elliot-page-on-his-memoir-pageboy/317862/",
+      },
+      {
+        label: "Silver — Museums & Galleries",
+        href: "https://www.tellyawards.com/winners/2024/non-broadcast/general-museums-galleries/2023-national-book-festival-elliot-page-on-his-memoir-pageboy/318021",
+      },
+      {
+        label: "Silver — Social Issues",
+        href: "https://www.tellyawards.com/winners/2024/non-broadcast/general-social-issues/2023-national-book-festival-elliot-page-on-his-memoir-pageboy/318120",
+      },
+    ],
   },
   {
     outlet: "Peabody Awards",
