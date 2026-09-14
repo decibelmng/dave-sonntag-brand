@@ -13,16 +13,31 @@ type Entry = {
 
 const entries: Entry[] = [
   {
-    outlet: "Washington Business Journal",
-    title: "Largest Meeting and Event Planners",
-    desc: "Ranked every year since 2019 — #17 in 2026.",
-    year: "2019–2026",
+    outlet: "Wake Forest Magazine",
+    title: "\"They Can Handle That\"",
+    desc: "Feature profile on Dave's career in live event production.",
+    year: "2017",
+    href: "https://magazine.wfu.edu/2017/06/28/they-can-handle-that/",
+  },
+  {
+    outlet: "Trade Show News Network",
+    title: "Decibel's UpCycling Initiative",
+    desc: "How Decibel Events is combatting event textile waste.",
+    year: "2019",
+    href: "https://www.tsnn.com/news/how-decibel-event-management-combatting-event-textile-waste",
   },
   {
     outlet: "Blue Ocean Global Technology",
     title: "Founder Interview",
     desc: "A conversation on building an event production firm for high-stakes clients.",
     year: "2024",
+    href: "https://www.blueoceanglobaltech.com/interview/david-sonntag-founder-and-ceo-at-decibel-events/",
+  },
+  {
+    outlet: "Washington Business Journal",
+    title: "Largest Meeting and Event Planners",
+    desc: "Ranked every year since 2019 — #17 in 2026.",
+    year: "2019–2026",
   },
   {
     outlet: "The Telly Awards",
