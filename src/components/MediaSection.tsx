@@ -9,7 +9,7 @@ const topics = [
   "What corporate event buyers look for in a production partner",
   "AI and technology's impact on event production and scenic design",
   "Building a boutique firm in a large-agency market",
-  "15 years producing the Library of Congress National Book Festival",
+  "15 years behind the Library of Congress National Book Festival",
 ];
 
 const MediaSection = () => {
