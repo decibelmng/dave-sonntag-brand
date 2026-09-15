@@ -3,11 +3,11 @@ import { Trophy, Award, Star, Newspaper, Building2, GraduationCap, BookOpen, Ext
 import SectionHeadingAccent from "./SectionHeadingAccent";
 
 const awards = [
-  { icon: Trophy, name: "7 Silver Anvil Awards", desc: "PRSA's highest honor, including Excellence winners" },
+  { icon: Trophy, name: "9 Silver Anvil Honors", desc: "PRSA national recognition, 2006 to 2017, including double category wins in 2012 and 2015" },
   { icon: Award, name: "11 Telly Awards", desc: "Gold, Silver, and Bronze across multiple categories" },
-  { icon: Star, name: "2 PR Week Awards", desc: "National recognition for campaign excellence" },
-  { icon: Award, name: "Peabody Award — Voices of Civil Rights", desc: "Produced the 70-day AARP bus tour featured in Peabody Award-winning broadcast coverage" },
-  { icon: Building2, name: "WBJ Top Event Firm", desc: "Continuously ranked since 2019, #17 in 2026" },
+  { icon: Star, name: "Event Technology Award", desc: "Silver, Best Audience Interaction, for H&R Block's Get Your Billion Back America" },
+  { icon: Award, name: "Peabody & Emmy: Voices of Civil Rights", desc: "Produced the 70-day AARP bus tour behind the Peabody Award-winning broadcast and its Emmy for Outstanding Research" },
+  { icon: Building2, name: "WBJ Top Event Firm", desc: "Continuously ranked since 2019, top 20 in 2026" },
   { icon: GraduationCap, name: "40 Under 40", desc: "Triangle Business Journal Leadership Award" },
   {
     icon: BookOpen,

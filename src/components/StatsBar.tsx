@@ -44,11 +44,11 @@ const CountUp = ({ end, prefix = "", suffix = "", duration = 2000 }: CountUpProp
 
 const stats = [
   { end: 20, suffix: "+", label: "Years in Events" },
-  { end: 7, label: "Silver Anvils" },
+  { end: 9, label: "Silver Anvil Honors" },
   { end: 11, label: "Telly Awards" },
   { end: 50, suffix: "+", label: "Presidential Events" },
-  { end: 15, label: "Years at LOC Festival" },
-  { end: 17, prefix: "#", label: "WBJ Top Event Firms — Ranked Since 2019" },
+  { end: 20, suffix: "+", label: "Years at the National Book Festival" },
+  { end: 20, prefix: "Top ", label: "WBJ Event Firms, Ranked Every Year Since 2019" },
 ];
 
 const StatsBar = () => {
